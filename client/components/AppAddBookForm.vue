@@ -6,7 +6,7 @@
       </div>
     </template>
     <div>
-      <p>Hello</p>
+      <el-input v-model="form.bookTitle" placeholder="Book title" />
     </div>
     <template #footer>
       <div>
@@ -17,4 +17,8 @@
   </el-card>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const form = reactive({
+  bookTitle: "",
+});
+</script>

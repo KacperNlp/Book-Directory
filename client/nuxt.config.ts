@@ -5,4 +5,16 @@ export default defineNuxtConfig({
   modules: [
     '@element-plus/nuxt'
   ],
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.API_URL || 'http://localhost:8080',
+    },
+  },
 })
