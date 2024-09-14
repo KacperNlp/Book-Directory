@@ -2,11 +2,7 @@
   <div class="my-16">
     <ul>
       <li v-for="book in books" :key="book.id">
-        <AppBookBlock
-          :title="book.title"
-          :author="book.author"
-          :img="book.img"
-        />
+        <AppBookBlock :title="book.title" :author="book.author" :img="book.img" />
       </li>
     </ul>
   </div>
