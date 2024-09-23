@@ -12,11 +12,7 @@ const getBooks = async (req, res) => {
 
 const createBook = async (req, res) => {
   try {
-    const newBook = new Book({
-      title: "Test",
-      author: "Adam Mic",
-      categories: "history",
-    });
+    const newBook = new Book(req.body);
 
     await newBook.save();
     res.status(201).json(newBook);
