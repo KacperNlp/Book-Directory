@@ -1,7 +1,7 @@
 <template>
   <div class="my-16">
     <ul
-      class="flex flex-col gap-x-8 gap-y-10 md:grid md:grid-cols-2 lg:grid-cols-3"
+      class="flex flex-col gap-x-8 gap-y-10 sm:grid sm:grid-cols-2 md:grid-cols-3"
     >
       <li v-for="book in books" :key="book._id">
         <AppBookBlock
