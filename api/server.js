@@ -3,6 +3,8 @@ import cors from "cors";
 import authRoutes from "./routes/auth.js";
 import booksRoutes from "./routes/books.js";
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 const app = express();
 

@@ -3,7 +3,7 @@ import Book from "../models/bookModel.js";
 const getBooks = async (req, res) => {
   try {
     const books = await Book.find();
-    console.log(books);
+
     res.json(books);
   } catch (ex) {
     res.status(500).send("Server Error: Unable to fetch books");

@@ -1,15 +1,9 @@
 import express from "express";
+import { registerUser, loginUser } from "../controllers/userController.js";
 
 const router = express.Router();
 
-router.post('/login', (req, res) => {
-    const { name, password } = req.body;
-
-    if(name && password) {
-        return res.send(true);
-    }
-
-    res.status(401).send(false)
-});
+router.post("/register", registerUser);
+router.post("/login", loginUser);
 
 export default router;
