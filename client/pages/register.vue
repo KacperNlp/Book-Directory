@@ -29,7 +29,7 @@
             <el-button type="primary" @click="onSubmit">Rejestruj</el-button>
             <div class="flex flex-col items-center gap-2 text-sm">
               <span>Masz już kont?</span>
-              <nuxt-link to="/register" class="hover:text-blue-500"
+              <nuxt-link to="/login" class="hover:text-blue-500"
                 >Zaloguj się</nuxt-link
               >
             </div>
