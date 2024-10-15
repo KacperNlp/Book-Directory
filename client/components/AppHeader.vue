@@ -1,56 +1,23 @@
 <template>
-  <header
-    class="nav fixed flex px-4 py-8 border-b bg-stone-50 w-dvw h-dvh max-w-80 left-[-320px] duration-500"
-    :class="{ active: navActive }"
-  >
+  <header class="nav fixed flex px-4 py-8 border-b bg-stone-50 w-dvw h-dvh max-w-80 left-[-320px] duration-500"
+    :class="{ active: navActive }">
     <nav>
       <ul class="flex flex-col gap-6">
-        <nuxt-link
-          to="/"
-          class="nav-item flex items-center gap-2 hover:text-blue-500 duration-200"
-        >
-          <Icon
-            name="uil:home"
-            style="color: black"
-            size="24"
-            class="duration-200"
-          />
+        <nuxt-link to="/" class="nav-item flex items-center gap-2 hover:text-blue-500 duration-200">
+          <Icon name="uil:home" style="color: black" size="24" class="duration-200" />
           <span>Strona główna</span>
         </nuxt-link>
-        <nuxt-link
-          to="/my-list"
-          class="nav-item flex items-center gap-2 hover:text-blue-500 duration-200"
-        >
-          <Icon
-            name="uil:user"
-            style="color: black"
-            size="24"
-            class="duration-200"
-          />
+        <nuxt-link to="/account" class="nav-item flex items-center gap-2 hover:text-blue-500 duration-200">
+          <Icon name="uil:user" style="color: black" size="24" class="duration-200" />
           <span>Konto</span>
         </nuxt-link>
       </ul>
     </nav>
   </header>
-  <el-button
-    @click="handleClickShowHideNav"
-    class="on-off-nav-btn fixed bottom-2 left-1 duration-500"
-    :class="{ active: navActive }"
-    type="primary"
-    round
-  >
-    <Icon
-      v-show="!navActive"
-      name="uil:angle-right-b"
-      style="color: #fff"
-      size="24"
-    />
-    <Icon
-      v-show="navActive"
-      name="uil:angle-left-b"
-      style="color: #fff"
-      size="24"
-    />
+  <el-button @click="handleClickShowHideNav" class="on-off-nav-btn fixed bottom-2 left-1 duration-500"
+    :class="{ active: navActive }" type="primary" round>
+    <Icon v-show="!navActive" name="uil:angle-right-b" style="color: #fff" size="24" />
+    <Icon v-show="navActive" name="uil:angle-left-b" style="color: #fff" size="24" />
   </el-button>
 </template>
 
@@ -66,6 +33,7 @@ function handleClickShowHideNav() {
 .router-link-active {
   color: #3b82f6;
 }
+
 .router-link-active .iconify {
   color: #3b82f6 !important;
 }

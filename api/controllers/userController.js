@@ -26,7 +26,16 @@ const registerUser = async (req, res) => {
     });
 
     await newUser.save();
-    res.status(201).json({ message: "User registered successfully" });
+
+    const token = jwt.sign({ email: newUser.email }, "secret", {
+      expiresIn: "12h",
+    });
+
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: 'lax'
+    }).status(201).json({ message: "User registered successfully" });
   } catch (ex) {
     res.status(500).json({ error: "Internal server error" });
   }
@@ -52,7 +61,15 @@ const loginUser = async (req, res) => {
     const token = jwt.sign({ email: user.email }, "secret", {
       expiresIn: "12h",
     });
-    res.status(200).json({ token });
+    
+    return res
+    .cookie("jwt", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: 'lax'
+    })
+    .status(200)
+    .json({ message: "Logged in successfully 😊" });
   } catch (ex) {
     res.status(500).json({ error: "Internal server error" });
   }
