@@ -1,5 +1,5 @@
 <template>
-  <el-card>
+  <el-card class="relative hover:border-1 hover:border-blue-700">
     <div class="p-8">
       <img v-if="img" :src="img" :alt="title" />
       <img v-else src="/img/book-placeholder.svg" :alt="title" />
@@ -8,19 +8,20 @@
     <span class="text-sm md:text-base text-gray-500">{{ author }}</span>
     <div class="mt-2 text-sm">
       <span>Kategorie:</span>
-      <ul class="flex gap-2 mt-2">
-        <li v-for="(category, index) in categories" :key="index">
-          <el-tag type="info">{{ category }}</el-tag>
-        </li>
-      </ul>
+      <AppTags :categories="categories" />
     </div>
+    <nuxt-link
+      :to="`/book/${id}`"
+      class="absolute top-0 left-0 right-0 bottom-0"
+    ></nuxt-link>
   </el-card>
 </template>
 <script lang="ts" setup>
 interface Props {
+  id: string;
   title: string;
   author: string;
-  img: string;
+  img?: string;
   categories: string[];
 }
 
