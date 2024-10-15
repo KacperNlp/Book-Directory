@@ -3,7 +3,7 @@
     <section class="mb-12 flex justify-center">
       <AppSearch />
     </section>
-    <section>
+    <AppSection>
       <ul
         v-if="isBooksNotEmpty"
         class="flex flex-col gap-x-8 gap-y-10 sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
@@ -21,7 +21,7 @@
       <div v-else>
         <span>You don't have any books...</span>
       </div>
-    </section>
+    </AppSection>
   </div>
 </template>
 <script lang="ts" setup>
