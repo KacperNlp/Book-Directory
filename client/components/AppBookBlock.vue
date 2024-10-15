@@ -20,7 +20,7 @@
 interface Props {
   title: string;
   author: string;
-  img: string;
+  img?: string;
   categories: string[];
 }
 

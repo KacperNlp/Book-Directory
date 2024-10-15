@@ -10,19 +10,13 @@
             <el-input v-model="form.nick" />
           </el-form-item>
           <el-form-item label="Hasło">
-            <el-input
-              v-model="form.password"
-              type="password"
-              autocomplete="off"
-            />
+            <el-input v-model="form.password" type="password" autocomplete="off" />
           </el-form-item>
           <div class="mt-6 flex flex-col gap-6 justify-center">
             <el-button type="primary" @click="onSubmit">Zaloguj</el-button>
             <div class="flex flex-col items-center gap-2 text-sm">
               <span>Nie masz konta?</span>
-              <nuxt-link to="/register" class="hover:text-blue-500"
-                >Zarejestruj się</nuxt-link
-              >
+              <nuxt-link to="/register" class="hover:text-blue-500">Zarejestruj się</nuxt-link>
             </div>
           </div>
         </el-form>
@@ -46,6 +40,8 @@ async function onSubmit() {
         ...form,
       },
     });
+
+    navigateTo("/");
   } catch (ex) {
     console.error(ex);
   }
