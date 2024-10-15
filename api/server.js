@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import cookieParser from 'cookie-parser';
+import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.js";
 import booksRoutes from "./routes/books.js";
 import mongoose from "mongoose";
@@ -15,10 +15,12 @@ mongoose
   .then(() => console.log("Connected to MongoDB with Mongoose"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
-app.use(cors({
-  origin: 'http://localhost:3000', // Frontend URL
-  credentials: true // 
-}));
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Frontend URL
+    credentials: true, //
+  })
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -21,4 +21,14 @@ const createBook = async (req, res) => {
   }
 };
 
-export { getBooks, createBook };
+const getBook = async (req, res) => {
+  try {
+    const book = await Book.findOne({ _id: req.params.id });
+
+    res.json(book);
+  } catch (ex) {
+    res.status(500).send("Server Error: Unable to fetch book");
+  }
+};
+
+export { getBooks, createBook, getBook };
